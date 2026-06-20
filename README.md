@@ -6,17 +6,17 @@
 flowchart TB
     Browser["Browser (React SPA)"]
     CF["CloudFront"]
-    Google["Google<br/>OAuth / OIDC"]
+    Google(["Google OIDC"])
 
     subgraph AWS["ap-northeast-1"]
         L["Lambda (Hono)<br/>static + API"]
         DDB[("DynamoDB")]
         SSM["SSM<br/>secrets"]
-        L --> DDB
-        L --> SSM
+        L <--> DDB
+        L <--> SSM
     end
 
-    Browser -->|HTTPS| CF
-    CF -->|"Function URL (OAC)"| L
-    L --> Google
+    Browser <-->|HTTPS| CF
+    CF <-->|"Function URL (OAC)"| L
+    L <--> Google
 ```
