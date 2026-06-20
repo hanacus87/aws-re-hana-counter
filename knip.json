@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "backend/lambda.ts",
+    "backend/dev.ts",
+    "infra/app.ts",
+    "test/**/*.test.ts",
+    "test/**/*.test.tsx"
+  ],
+  "ignore": ["test/backend-env.d.ts", "backend/env.d.ts"],
+  "project": ["frontend/**", "backend/**", "infra/**", "test/**"]
+}
