@@ -11,5 +11,5 @@ export default defineConfig({
       exclude: [/^\/(?!api\/|auth\/).*/],
     }),
   ],
-  build: { outDir: "dist/client" },
+  build: { outDir: "dist/client", sourcemap: false },
 });
